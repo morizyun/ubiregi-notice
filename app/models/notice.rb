@@ -8,7 +8,7 @@ class Notice < ActiveRecord::Base
     where("close_at IS NULL OR ? < close_at", now)
   end
 
-  def self.close!(now = Time.now)
+  def close!(now = Time.now)
     self.update_attributes!(:close_at => now)
   end
 

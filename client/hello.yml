@@ -1,0 +1,12 @@
+close_at:
+messages_attributes:
+  - locale: ja
+    subject: サーバが停止します
+    body:
+      2012年３月１０かより１時間サーバを停止します。
+      利用者の皆様にはご迷惑をおかけしてしまい、もうしわけありません。
+  - locale: en
+    subject: Server maintenance
+    body:
+      asodifa;sodifjas;odifja;sodifjas;doifj
+

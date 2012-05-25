@@ -8,6 +8,14 @@ class Notice < ActiveRecord::Base
     where("close_at IS NULL OR ? < close_at", now)
   end
 
+  def self.locale(locales)
+    if locales.empty?
+      where("1 = 1")
+    else
+      where("EXISTS (SELECT * FROM messages WHERE messages.notice_id = notices.id AND messages.locale IN (?))", locales)
+    end
+  end
+
   def close!(now = Time.now)
     self.update_attributes!(:close_at => now)
   end

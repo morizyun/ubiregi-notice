@@ -5,10 +5,3 @@ messages_attributes:
       6月3日にバージョン2.14をリリースしました。
       このリリースでは入力が完了した会計を、iPad間で同期する機能が追加されました。
       iPadのApp Storeから無料でアップデートできます！
-  - locale: en
-    subject: Ubiregi 2.14 is released!
-    body:
-      The lates version of Ubiregi iPad app, 2.14, is released June 3.
-      This new version shares all closed checkouts between iPad devices.
-      You can upgrade for free using iPad's App Store.
-

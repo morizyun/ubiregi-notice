@@ -3,7 +3,8 @@ class NoticesController < ApplicationController
 
   def index
     now = params[:now] ? Time.parse(params[:now]) : Time.now
-    render :json => { :notices => Notice.open(now) }, :locale => (params[:locale] || "").split
+    locale = (params[:locale] || "").split
+    render :json => { :notices => Notice.open(now).locale(locale) }, :locale => locale
   end
 
   def show

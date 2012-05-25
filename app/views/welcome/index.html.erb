@@ -1,0 +1,8 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<% for notice in @notices %>
+  <div>
+    <%= notice.created_at %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+messages_attributes:
+  - locale: ja
+    subject: "ユビレジ 2.14のリリース"
+    body:
+      みなさんお気づきの通り、新しいユビレジのバージョン2.14をリリースしました。
+      このリリースでは、当日の会計が、当該アカウントでログインしている全てのiPadから確認できるようになり、
+      さらに顧客の会計履歴がサーバからダウンロードされるようになりました。
+      また、ユビレジエクステンションから印刷したレシートの書式についても変更があります。
+      詳しくは、Webサイトにログインして、お知らせを確認してください！
+  - locale: en
+    subject: "Ubiregi 2.14 release announce"
+    body:
+      As you notice, new version of Ubiregi, 2.14, is released!
+      This is a new feature which tells you announcement from Ubiregi team, including server maintenance and so on.

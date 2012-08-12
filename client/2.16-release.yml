@@ -1,0 +1,14 @@
+messages_attributes:
+  - locale: ja
+    subject: "ユビレジ 2.16のリリース"
+    body:
+      ユビレジ2.16をリリースしました。
+      このリリースでは、同期などのパフォーマンス上の問題が改善しています。
+      また、2.14で発生したレジ担当者が保存されない問題についても、2.12以前の動作に戻っています。
+      アップデートにおいて、データベースの更新が失敗する問題がまれに発生するようです。
+      データベースの更新に失敗した場合は、アプリの再インストールをお願いします。
+  - locale: en
+    subject: "Ubiregi 2.16 release announce"
+    body:
+      New version of Ubireg, 2.16, is released!
+      Synchronization performance issues reported on 2.14 is improved.

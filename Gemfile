@@ -30,7 +30,7 @@ end
 group :production do
   gem 'pg'
   gem 'therubyracer'
-  gem 'thin'
+  gem 'unicorn'
 end
 
 # To use ActiveModel has_secure_password
@@ -47,3 +47,5 @@ end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'newrelic_rpm'

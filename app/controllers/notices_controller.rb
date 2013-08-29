@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   def index
     now = params[:now] ? Time.parse(params[:now]) : Time.now
     locale = (params[:locale] || "").split
-    render :json => { :notices => Notice.open(now).locale(locale) }, :locale => locale
+    render :json => { :notices => Notice.open(now).locale(locale).order("updated_at DESC") }, :locale => locale
   end
 
   def show

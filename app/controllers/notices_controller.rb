@@ -1,31 +1,11 @@
 class NoticesController < ApplicationController
+  skip_before_filter :basic_auth
   before_filter :authorize, :only => [:create, :update, :close]
 
   def index
     now = params[:now] ? Time.parse(params[:now]) : Time.now
-    locale = (params[:locale] || "").split
+    locale = (params[:locale] || 'en').split
     render :json => { :notices => Notice.open(now).locale(locale).order("updated_at DESC") }, :locale => locale
-  end
-
-  def show
-    render :json => { :notice => Notice.find(params[:id]) }
-  end
-
-  def create
-    notice = Notice.create!(params[:notice])
-    render :json => { :notice => notice }, :status => :created
-  end
-
-  def update
-    notice = Notice.find(params[:id])
-    notice.update_attributes(params[:notice])
-    render :json => { :notice => notice }, :status => :ok
-  end
-
-  def close
-    notice = Notice.find(params[:id])
-    notice.close!
-    render :json => { :notice => notice }
   end
 
   private

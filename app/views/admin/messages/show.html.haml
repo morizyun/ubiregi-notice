@@ -1,0 +1,17 @@
+%h1 Show message
+
+.well
+  %div
+    言語:
+    = @message.locale
+  %div
+    タイトル:
+    = @message.subject
+  %div
+    本文:
+    = @message.body
+
+%div
+  = link_to 'Edit', edit_admin_message_path(@message), class: 'btn btn-danger'
+%hr/
+= link_to 'Back Notice', admin_notice_path(@message.notice)

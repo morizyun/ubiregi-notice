@@ -1,0 +1,15 @@
+- if @notice.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@notice.errors.count, "error")
+      prohibited this admin_notice from being saved:
+    %ul
+      - @notice.errors.full_notices.each do |msg|
+        %li= msg
+
+.well
+  %label 有効期限:
+  = f.datetime_select :close_at
+
+.actions
+  %button.btn.btn-info{type: 'submit'} Submit

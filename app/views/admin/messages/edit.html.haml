@@ -1,0 +1,9 @@
+%h1 Editing message
+
+= form_for(@message, url: admin_message_url(@message)) do |f|
+  = render :partial => 'admin/messages/form', locals: {f: f}
+
+%hr
+= link_to 'Show', admin_message_path(@message)
+|
+= link_to 'Back', admin_notices_path

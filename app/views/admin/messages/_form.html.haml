@@ -1,0 +1,24 @@
+- if @message.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@message.errors.count, 'error')
+      prohibited this admin_notice from being saved:
+    %ul
+      - @message.errors.full_messages.each do |msg|
+        %li= msg
+
+.well
+  .form-group
+    %label 言語:
+    = select_tag 'message[locale]', options_for_select(Message.locale_list), class: 'form-control'
+
+  .form-group
+    %label タイトル:
+    = f.text_field :subject, class: 'form-control'
+
+  .form-group
+    %label 本文:
+    = f.text_area :body, class: 'form-control'
+
+  .actions.form-group
+    %button.btn.btn-info{type: 'submit'} Submit

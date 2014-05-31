@@ -11,16 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525060054) do
+ActiveRecord::Schema.define(:version => 20140531142554) do
 
   create_table "messages", :force => true do |t|
     t.integer  "notice_id"
-    t.string   "locale"
+    t.string   "locale",     :null => false
     t.string   "subject"
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "messages", ["notice_id", "locale"], :name => "index_messages_on_notice_id_and_locale", :unique => true
 
   create_table "notices", :force => true do |t|
     t.datetime "close_at"

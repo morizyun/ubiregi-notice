@@ -1,0 +1,20 @@
+%h1 Listing notices
+
+%table.table.table-bordered.table-striped
+  %tr
+    %th close_at
+    %th created_at
+    %th subject(ja)
+    %th
+    %th
+    %th
+  - @notices.each do |notice|
+    %tr
+      %td= notice.close_at.to_s
+      %td= notice.created_at.to_s
+      %td= notice.messages.where(locale: 'ja').first.try(:subject)
+      %td= link_to 'Show', admin_notice_path(id: notice.id), class: 'btn btn-default'
+      %td= link_to 'Edit', edit_admin_notice_path(notice), class: 'btn btn-default'
+      %td= link_to 'Destroy', admin_notice_path(notice), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+%br/
+= link_to 'New Notice', new_admin_notice_path, class: 'btn btn-danger'

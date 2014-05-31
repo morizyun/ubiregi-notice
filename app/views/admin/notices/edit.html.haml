@@ -1,0 +1,9 @@
+%h1 Editing notice
+
+= form_for @notice, url: admin_notice_url(@notice) do |f|
+  = render partial: 'admin/notices/form', locals: {f: f}
+
+%hr
+= link_to 'Show', admin_notice_path(id: @notice.id)
+|
+= link_to 'Back', admin_notices_path

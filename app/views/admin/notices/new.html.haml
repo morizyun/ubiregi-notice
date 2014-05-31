@@ -1,0 +1,6 @@
+%h1 New notice
+
+= form_for @notice, url: admin_notices_path do |f|
+  = render partial: 'admin/notices/form', locals: {f: f}
+
+= link_to 'Back', admin_notices_path

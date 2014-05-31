@@ -1,7 +1,7 @@
 class Notice < ActiveRecord::Base
   has_many :messages
 
-  attr_accessible :close_at, :messages, :messages_attributes
+  attr_accessible :close_at, :notices, :messages_attributes
   accepts_nested_attributes_for :messages
 
   def self.open(now = Time.now)
@@ -28,7 +28,7 @@ class Notice < ActiveRecord::Base
       :created_at => self.created_at,
       :updated_at => self.updated_at,
       :close_at => self.close_at,
-      :messages => self.messages.locale(*locales).as_json(options)
+      :notices => self.messages.locale(*locales).as_json(options)
     }
   end
 end

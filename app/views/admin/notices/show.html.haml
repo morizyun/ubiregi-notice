@@ -1,0 +1,34 @@
+%h1 Show notice
+
+%p#notice= notice
+
+.well
+  %div
+    id:
+    = @notice.id
+  %div
+    close_at:
+    = @notice.close_at.to_s
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %td locale
+      %td subject
+      %td
+      %td
+      %td
+  %tbody
+    - @notice.messages.each do |m|
+      %tr
+        %td= m.locale
+        %td= m.subject
+        %td= link_to 'Show', admin_message_path(m), class: 'btn btn-default'
+        %td= link_to 'Edit', edit_admin_message_path(m), class: 'btn btn-default'
+        %td= link_to 'Destroy', admin_message_path(m), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+
+%div
+  = link_to 'new', new_admin_notice_message_path(@notice), class: 'btn btn-danger'
+%hr/
+
+= link_to 'Back List notices', admin_notices_path
